@@ -58,7 +58,7 @@ const { data: products } = await useAsyncData(
                             <CardLevelTwo 
                                 :title="prod.name"
                                 :text="prod.teaser"
-                                :url="`/prestation/${route.params.serviceSlug}/${prod.slug}`"
+                                :url="`/prestations/${route.params.serviceSlug}/${prod.slug}`"
                                 :imageId="prod.cardImage.id"
                                 :imageAlt="`${prod.name}, par Carine Leduc, thérapeute énergétitienne.`"/>
                         </li>

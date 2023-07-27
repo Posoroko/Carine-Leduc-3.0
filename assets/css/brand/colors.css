@@ -40,3 +40,10 @@
 .mainTextColor {
     color: var(--text-color);
 }
+
+.BGC_Brand2_Hoverable {
+    background-color: var(--brand-color-2);
+}
+.BGC_Brand2_Hoverable:hover {
+    background-color: var(--brand-color-2-hover);
+}

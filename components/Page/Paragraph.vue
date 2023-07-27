@@ -12,10 +12,10 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="box narrowWidth">
-        <h2 class="title">{{ title }}</h2>
+    <div class="box narrowWidth marTop50">
+        <h2 class="title" v-if="title">{{ title }}</h2>
 
-        <p class="content bodyText1">
+        <p class="content bodyText2" v-if="text">
             <span class="firstLetter">{{ text[0] }}</span>
             {{ text.slice(1, 10000) }}
         </p>
@@ -33,9 +33,9 @@ const props = defineProps({
 .content {
     width: 100%;
     color: var(--text-color);
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     border-bottom: 1px solid var(--brand-color-2);
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: justify;
     columns: 2;
     gap: 40px;

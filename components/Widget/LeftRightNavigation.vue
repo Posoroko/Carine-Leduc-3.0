@@ -2,16 +2,16 @@
 
 const emit = defineEmits(['navigate'])
 
-function navigate(e) {
-    emit('navigate', e.currentTarget.dataset.direction)
-}
+// function navigate(e) {
+//     emit('navigate', e.currentTarget.dataset.direction)
+// }
 </script>
 
 <template>
     <div class="absolute full top0 left0 noEvents_kidsEvents">
-        <span class="icon chevron left" @click="navigate" data-direction="left">chevron_left</span>
+        <span class="icon chevron left" @click="$emit('navigate', 'left')" data-direction="left">chevron_left</span>
 
-        <span class="icon chevron right" @click="navigate" data-direction="right">chevron_right</span>
+        <span class="icon chevron right" @click="$emit('navigate', 'right')" data-direction="right">chevron_right</span>
     </div>
 </template>
 

@@ -9,15 +9,15 @@ const directusItems = appConfig.directus.items;
 const fetchOptions = {
     server: true,
     params: {
-        // fields: 'id, title, subtitle, content, image, imageAlt, moreInfo, date_created, file, fileName',
+        fields: 'id, title, introText, cardImage, headerImage, paragraphs.*',
     }
 }
 
 const { data: pageData } = await useAsyncData(
-    "pageData",
+    `about-${route.params.slug}`,
     async () => {
         const items = await $fetch(`${directusItems}About?filter[slug][_eq]=${route.params.slug}`, fetchOptions)
-        console.log(items.data[0])
+
         return items.data[0]
     }
     ,
@@ -36,21 +36,9 @@ const { data: pageData } = await useAsyncData(
                 <PageIntroText :text="pageData.introText" />
             </template>
 
-        
-        
             <template #main>
                 <section class="fullWidthBox">
-                    <PageTwoColumnsParagraph v-if="pageData.paragraph1" :text="pageData.paragraph1" />
-
-                    <p class="bodyText2" v-if="pageData.paragraph2">
-                        <span class="firstLetter">{{ pageData.paragraph2[0] }}</span>
-                        {{ pageData.paragraph2.slice(1, 10000) }}
-                    </p>
-
-                    <p class="bodyText2" v-if="pageData.paragraph3">
-                        <span class="firstLetter">{{ pageData.paragraph3[0] }}</span>
-                        {{ pageData.paragraph3.slice(1, 10000) }}
-                    </p>
+                    <PageParagraph v-for="para in pageData.paragraphs" :key="para.id" :title="para.title" :text="para.content" />
                 </section>
             </template>
         </PageMain>
