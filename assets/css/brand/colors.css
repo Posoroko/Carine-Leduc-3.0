@@ -1,0 +1,42 @@
+:root {
+    --basic-light-color: #e1d5c3;
+    --basic-dark-color: #131614;
+
+
+
+    /* green */
+    --brand-color-1: #3e5841;
+    --brand-color-1-hover: #446148;
+    /* red */
+    --brand-color-2: #633943;
+    --brand-color-2-hover: #7d4955;
+
+
+    --box-border: 1px solid rgba(139, 240, 255, 0.179);
+
+    --shadow-color: rgba(0, 0, 0, 0.488);
+}
+
+
+.lightText {
+    color: var(--basic-light-color);
+}
+.darkText {
+    color: var(--basic-dark-color);
+}
+
+
+
+
+:root {
+    --background-color: var(--basic-light-color);
+    --text-color: var(--basic-dark-color);
+}
+
+.mainBgColor {
+    background-color: var(--background-color);
+}
+
+.mainTextColor {
+    color: var(--text-color);
+}

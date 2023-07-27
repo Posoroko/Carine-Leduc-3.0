@@ -1,0 +1,64 @@
+.largeCard {
+    padding: 30px 6px;
+}
+.largeCard_imgFrame{
+    width: min(400px, 100%);
+}
+.largeCard_image {
+    /* width: min(400px, 100%); */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: -2px 0px 15px rgba(0, 0, 0, 0.512);
+}
+
+.largeCard * {
+    color: rgb(0, 75, 82);
+}
+
+.largeCard_title {
+    font-family: 'Cormorant', serif;
+    font-size: 90px;
+    font-weight: 500;
+    line-height: 1;
+    transform: translateX(-5px);
+}
+
+.largeCard_smallTitleFont {
+    font-size: clamp(5rem, 7vw + 0.1rem, 7rem);
+}
+
+.largeCard_titleNote {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.largeCard_textBox {
+    width: min(100ch, 100%);
+    padding: 40px 10%;
+    /* background-color: rgb(211, 211, 211); */
+    background-color: var(--brand-color-1);
+}
+
+.largeCard_text {
+    margin-top: 40px;
+}
+
+.largeCard_agendaBtn {
+    height: 48px;
+    width: 48px;
+    font-size: 32px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    line-height: 1;
+    transition: 300ms ease;
+}
+
+.largeCard_agendaBtn:hover {
+    font-weight: 500;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.178);
+    transition: 300ms ease;
+}

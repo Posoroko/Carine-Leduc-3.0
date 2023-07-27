@@ -1,0 +1,32 @@
+:root {
+    --main-width-basis: 1100px;
+    --main-width: min(var(--main-width-basis), 100%);
+    --main-width-padding: 20px;
+
+    --narrowWidth: calc(var(--main-width-basis) * 0.75);
+}
+
+
+.fullWidthBox {
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.mainWidth {
+    width: var(--main-width);
+    margin: auto; 
+}
+
+.narrowWidth {
+    width: min(var(--narrowWidth), 100%);
+    margin: auto;
+}
+
+.mainWidth,
+.narrowWidth {
+    padding-left: clamp(5px, 2vw, 10px);
+    padding-right: clamp(5px, 2vw, 10px);
+}
