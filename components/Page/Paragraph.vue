@@ -1,4 +1,7 @@
 <script setup>
+const appConfig = useAppConfig();
+const directusAssets = appConfig.directus.assets;
+
 const props = defineProps({
     text: {
         type: String,
@@ -7,12 +10,26 @@ const props = defineProps({
     title: {
         type: String,
         required: false
-    }
+    },
+    imageId: {
+        type: String,
+        required: false
+    },
+    imageAlt: {
+        type: String,
+        required: false
+    },
 })
 </script>
 
 <template>
     <div class="box narrowWidth marTop50">
+        <div class="imageBox" v-if="imageId">
+            <WidgetImageAndModal :imageId="imageId" :imageAlt="imageAlt" objectFit="contain" />
+
+            <!-- <img class="paragraphImage" :src="`${directusAssets}${imageId}?key=300px`" :alt="imageAlt"> -->
+        </div>
+
         <h2 class="title" v-if="title">{{ title }}</h2>
 
         <p class="content bodyText2" v-if="text">
@@ -23,12 +40,19 @@ const props = defineProps({
 </template>
 
 <style scoped>
+.imageBox {
+    height: 300px;
+    width: 350px;
+}
 .title {
     font-family: var(--title-font);
     font-size: clamp(2rem, 2vw + 0.1rem, 3.2rem);
     font-weight: 700;
     color: var(--text-color);
     margin-top: 45px;
+}
+.paragraphImage {
+    width: 300px;
 }
 .content {
     width: 100%;

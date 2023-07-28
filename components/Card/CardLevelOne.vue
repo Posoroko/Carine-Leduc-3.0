@@ -13,7 +13,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <article class="cardBox rightArrowHover">
+    <article class="mainWidth cardBox rightArrowHover">
         <NuxtLink :to="url" class="card relative block pointer flex">
             <div class="leftBox">
 
@@ -23,7 +23,7 @@ const props = defineProps({
                 <img class="cardImage" :src="`${directusAssets}${imageId}`" :alt="imageAlt">
             </div>
 
-            <div class="textBox flex column alignStart">
+            <div class="textBox flex column justifyBetween">
                 <h2 class="cardTitle lightText">{{ title }}</h2>
 
                 <p class="cardText lightText">{{ text }}</p>
@@ -65,8 +65,9 @@ const props = defineProps({
     margin: 20px 0px 20px 20px;
 }
 .frame {
-    width: 25%;
-    min-height: 250px;
+    width: 20%;
+    /* min-height: 250px; */
+    aspect-ratio: 1/1;
     border-radius: 5px;
     overflow: hidden;
 }

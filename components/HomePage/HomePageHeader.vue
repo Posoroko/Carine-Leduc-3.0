@@ -61,6 +61,7 @@ h2 {
     font-family: 'Montserrat';
     font-size: clamp(1.8rem, 3vw + 1px, 4rem);
     font-weight: 200;
+    line-height: 1.8;
     color: var(--basic-light-color);
     margin-left: auto;
     text-shadow: 0 0 10px black;

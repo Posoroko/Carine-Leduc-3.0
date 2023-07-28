@@ -33,12 +33,13 @@ const { data: agenda } = await useAsyncData(
     { server: true }
 )
 function toFrenchFormat(date) {
+    let months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novemebre", "Décembre"]
     let _date = new Date(date)
     let day = _date.getDate();
-    let month = _date.getMonth() + 1;
+    let month =  months[_date.getMonth()];
     let year = _date.getFullYear();
 
-    return `${day}/${month}/${year}`;
+    return `${day} ${month} ${year}`;
 }
 
 let drawer = ref(null)
@@ -73,19 +74,19 @@ let cardWidth = 265;
         </template>
 
         <template #main>
-            <section class="fullWidthBox relative">
+            <section class="w100 relative flex justifyStart">
                 <div class="drawer flex gap20 relative" ref="drawer">
                     <NuxtLink class="card pointer flex column justifyBetween BGC_Brand2_Hoverable rightArrowHover" :to="`/agenda/${date.slug}`" v-for="date in agenda" :key="date.id">
                         <div>
-                            <p class="date">{{ toFrenchFormat(date.date) }}</p>
+                            <p class="date agendaText">{{ toFrenchFormat(date.date) }}</p>
                 
-                            <p class="where">{{ date.where }}</p>
+                            <p class="where agendaText">{{ date.where }}</p>
                 
-                            <p class="cardTitle marTop50"> {{ date.title }}</p>
+                            <p class="cardTitle agendaText marTop50"> {{ date.title }}</p>
                         </div>
 
-                        <p class="cardText bodyText2 marTop50">{{ date.description.slice(0, 100) }} ...</p>
-
+                        <p class="cardText marTop50 agendaText">{{ date.description.slice(0, 100) }} ...</p>
+                        
                         <WidgetRightArrow />
                     </NuxtLink>
                 </div>
@@ -98,28 +99,32 @@ let cardWidth = 265;
 
 <style scoped>
 .drawer {
+    width: auto;
+    /* overflow: visible; */
     transform: v-bind("drawerClass");
     transition: 300ms ease;
+    padding-left: 20px;
 }
-* {
+.agendaText {
     font-family: "EB Garamond", sans-serif;
     color: var(--basic-light-color);
 }
 .card {
-    width: 265px;
+    width: min(90vw, 300px);
     padding: 40px;
     border-radius: 10px;
-
+    /* flex-shrink: 0; */
 }
 .date {
     font-size: clamp(2rem, 2.5vw, 2.8rem);
 }
 .cardTitle {
     font-family: var(--title-font);
-    font-size: clamp(2.4rem, 3vw, 3.5rem);
+    font-size: clamp(3rem, 4.5vw, 4rem);
     font-weight: 700;
-}
+} 
 .cardText {
-    /* height: 4em; */
+    font-size: clamp(2rem, 2vw, 2.6rem);
+    line-height: 1.5;
 }
 </style>

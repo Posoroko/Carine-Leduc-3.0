@@ -16,7 +16,7 @@ const props = defineProps({
 
 <template>
     <div class="headerImageFrame" :class="size">
-        <img :src="`${directusAssets}${imageId}`" alt="Carine Leduc, thérapeute énergéticienne en Centre-Bretagne.">
+        <img :src="`${directusAssets}${imageId}?key=header-1920x1080`" alt="Carine Leduc, thérapeute énergéticienne en Centre-Bretagne.">
     </div>
 </template>
 

@@ -29,7 +29,7 @@ const { data: pageData } = await useAsyncData(
     <PageMain v-if="pageData">
 
             <template #header>
-                <PageHeaderImage :imageId="pageData.headerImage" size="large" />
+                <PageHeaderImage :imageId="pageData.headerImage" size="small" />
                 
                 <PageTitle :text="pageData.title" />
                 
@@ -38,7 +38,11 @@ const { data: pageData } = await useAsyncData(
 
             <template #main>
                 <section class="fullWidthBox">
-                    <PageParagraph v-for="para in pageData.paragraphs" :key="para.id" :title="para.title" :text="para.content" />
+                    <PageParagraph v-for="para in pageData.paragraphs" :key="para.id" 
+                        :title="para.title" 
+                        :text="para.content" 
+                        :imageId="para.image"
+                        :imageAlt="para.imageAlt"/>
                 </section>
             </template>
         </PageMain>

@@ -51,8 +51,6 @@ const { data: products } = await useAsyncData(
         <template #main>
             <section class="fullWidthBox">
                 <div class="mainWidth productsBoard flex column gap20">
-                    <p>Voici mes {{ products.length }} propositions de {{ service.name }}.</p>
-
                     <ul class="flex column gap50">
                         <li v-for="prod in products" :key="prod.id">
                             <CardLevelTwo 

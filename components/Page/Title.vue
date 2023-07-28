@@ -11,10 +11,10 @@ const props = defineProps({
 
 <template>
     <div class="fullWidthBox marTop50">
-        <div class="flex justifyCenter alignCenter">
+        <div class="flex justifyCenter alignCenter gap20">
             <WidgetTitleFlower color="dark" direction="left" />
         
-            <h2 class="mainWidth bodyTitle">{{ text }}</h2>
+            <h2 class="bodyTitle">{{ text }}</h2>
 
             <WidgetTitleFlower color="dark" direction="right" />
         </div>
