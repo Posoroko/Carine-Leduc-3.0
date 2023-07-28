@@ -20,22 +20,12 @@ const { data: aboutPageData } = await useAsyncData(
     { server: true }
 )
 
-const { data: pageData } = await useAsyncData(
+const { data: aboutItems } = await useAsyncData(
     "homepageAbout",
     async () => {
         const items = await $fetch(`${directusItems}About`, fetchOptions)
-        const temp = {
-            carine: null,
-            techniques: null,
-            cabinet: null
-        }
-
-        temp.carine = items.data.filter(item => item.id === 'carine')[0]
-        temp.techniques = items.data.filter(item => item.id === 'techniques')[0]
-        temp.cabinet = items.data.filter(item => item.id === 'cabinet')[0]
-
-        console.log(temp)
-        return temp
+        
+        return items.data
     }
     ,
     { server: true }
@@ -44,12 +34,12 @@ const { data: pageData } = await useAsyncData(
 </script>
 
 <template>
-    <section class="fullWidthBox" v-if="pageData">
+    <section class="fullWidthBox" v-if="aboutPageData && aboutItems">
         
         
         <div class="about mainWidth flex column gap20 marTop50">
             <div class="cardBox ">
-                <NuxtLink class="card relative titleCard" to="/a-propos">
+                <NuxtLink class="card rightArrowHover relative titleCard" to="/a-propos">
                     <img class="titleCardImage full objectFitCover" :src="`${directusAssets}${aboutPageData.headerImage}`" alt="">
                     
                     <span class="aboutTextBox block absoluteFull flex column justifyBetween">
@@ -57,58 +47,22 @@ const { data: pageData } = await useAsyncData(
 
                         <p class="bodyText2 lightText introText">{{ aboutPageData.introText }}</p>
 
-                        <div class="buttonBox">
-                            <p class="bodyText2 lightText">voir la page</p>
-                        </div>
+                        <WidgetRightArrow />
                     </span>
                 </NuxtLink>
  
-                <NuxtLink :to="`a-propos/${pageData.carine.slug}`" class="card">
+                <NuxtLink v-for="item in aboutItems" :key="item.id" :to="`a-propos/${item.slug}`" class="card rightArrowHover">
                     <div class="frame">
-                        <img class="cardImage" :src="`${directusAssets}${pageData.carine.cardImage}`" alt="">
+                        <img class="cardImage" :src="`${directusAssets}${item.cardImage}`" alt="">
                     </div>
 
                     <div class="textBox">
                         <p class="cardTitle">Moi</p>
 
-                        <p class="cardTeaser">{{ pageData.cabinet.teaser }}</p>
+                        <p class="cardTeaser">{{ item.teaser }}</p>
 
-                        <div class="buttonBox">
-                            <WidgetCardReadMoreButton url="/a-propos/le-cabinet"/>
-                        </div>
-                    </div>
-                </NuxtLink>
-            </div>
-
-            <div class="cardBox">
-                <NuxtLink :to="`a-propos/${pageData.techniques.slug}`" class="card ">
-                    <div class="frame">
-                        <img class="" :src="`${directusAssets}${pageData.techniques.cardImage}`" alt="">
-                    </div>
-
-                    <div class="textBox">
-                        <p class="cardTitle">Mes techniques</p>
-                            
-                        <p class="cardTeaser">{{ pageData.cabinet.teaser }}</p>
-
-                        <div class="buttonBox">
-                            <WidgetCardReadMoreButton url="/a-propos/le-cabinet"/>
-                        </div>
-                    </div>
-                </NuxtLink>
-
-                <NuxtLink :to="`a-propos/${pageData.cabinet.slug}`" class="card">
-                    <div class="frame">
-                        <img class="cardImage" :src="`${directusAssets}${pageData.cabinet.cardImage}`" alt="">
-                    </div>
-
-                    <div class="textBox">
-                        <p class="cardTitle">Le cabinet</p>
-
-                        <p class="cardTeaser">{{ pageData.cabinet.teaser }}</p>
-
-                        <div class="buttonBox">
-                            <WidgetCardReadMoreButton url="/a-propos/le-cabinet"/>
+                        <div class="arrowBox">
+                            <WidgetRightArrow />
                         </div>
                     </div>
                 </NuxtLink>
@@ -192,9 +146,7 @@ img {
     color: var(--basic-light-color);
     margin-top: 20px;
 }
-.buttonBox {
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-end;
+.arrowBox {
+    padding: 20px 10px 0 0;
 }
 </style>

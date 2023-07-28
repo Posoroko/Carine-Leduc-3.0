@@ -29,7 +29,7 @@ const { data: services } = await useAsyncData(
 
         <div class="cardsBox flex justifyCenter wrap">
 
-            <NuxtLink :to="`/prestations/${service.slug}`" class="card relative flex column  pointer" v-for="service in services" :key="service.id">
+            <NuxtLink :to="`/prestations/${service.slug}`" class="card rightArrowHover relative flex column  pointer" v-for="service in services" :key="service.id">
                 <div class="frame" >
                     <img class="cardImage" v-if="service.cardImage" :src="`${directusAssets}${service.cardImage}`" alt="Soins énergétique par Carine Leduc">
                 </div>
@@ -39,14 +39,12 @@ const { data: services } = await useAsyncData(
                     <div>
                         <p class="cardTitle lightText">{{ service.name }}</p>
 
-                        <p class="cardTeaser lightText marTop20">
+                        <p class="cardTeaser lightText">
                             {{ service.teaser }}
                         </p>
                     </div>
 
-                    <div class="buttonBox w100 flex justifyEnd marTop20">
-                        <WidgetChevron direction="right" />
-                    </div>
+                    <WidgetRightArrow />
                 </div>
             </NuxtLink>
         </div>
@@ -69,7 +67,7 @@ const { data: services } = await useAsyncData(
     outline-offset: -8px;
     margin: 50px auto;
     align-items: stretch;
-    gap: 30px;
+    gap: 50px;
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.351);
 }
 .card {
@@ -101,7 +99,7 @@ const { data: services } = await useAsyncData(
 }
 .cardTitle {
     font-family: var(--title-font);
-    font-size: clamp(20px, 4vw, 30px);
+    font-size: clamp(2.8rem, 4.5vw + 0.1rem, 3.5rem);
     font-weight: 700;
     color: var(--basic-light-color);
     line-height: 1.2;
@@ -109,10 +107,11 @@ const { data: services } = await useAsyncData(
 }
 .cardTeaser {
     font-family: var(--text-font);
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 300;
     color: var(--basic-light-color);
-    line-height: 1.4;
+    line-height: 1.3;
     white-space: pre-wrap;
+    margin-top: 30px;
 }
 </style>
