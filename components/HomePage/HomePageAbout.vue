@@ -57,7 +57,7 @@ const { data: aboutItems } = await useAsyncData(
                     </div>
 
                     <div class="textBox">
-                        <p class="cardTitle">Moi</p>
+                        <p class="cardTitle">{{ item.title }}</p>
 
                         <p class="cardTeaser">{{ item.teaser }}</p>
 
