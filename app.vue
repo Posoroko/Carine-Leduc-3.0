@@ -1,4 +1,6 @@
 <template>
+    <SeoKit />
+    
     <div class="flex column justifyBetween " id="appBox">
 
         <NuxtPage />
