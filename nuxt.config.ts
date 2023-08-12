@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     extends: [
         'nuxt-seo-kit'
     ],
-
     runtimeConfig: {
         public: {
             siteUrl: 'https://carine-leduc-3.netlify.app',
@@ -67,6 +66,14 @@ export default defineNuxtConfig({
                 {
                     name: 'og:image',
                     content: '/seo-files/banner-1200x630.webp',
+                },
+                {
+                    name: 'og:image:width',
+                    content: "1200",
+                },
+                {
+                    name: 'og:image:height',
+                    content: "630",
                 },
                 {
                     name: 'og:url',
