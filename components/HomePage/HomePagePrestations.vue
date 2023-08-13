@@ -31,7 +31,7 @@ const { data: services } = await useAsyncData(
 
             <NuxtLink :to="`/prestations/${service.slug}`" class="card rightArrowHover relative flex column  pointer" v-for="service in services" :key="service.id">
                 <div class="frame" >
-                    <img class="cardImage" v-if="service.cardImage" :src="`${directusAssets}${service.cardImage}`" alt="Soins énergétique par Carine Leduc">
+                    <img class="cardImage" v-if="service.cardImage" :src="`${directusAssets}${service.cardImage}?key=350px`" alt="Soins énergétique par Carine Leduc">
                 </div>
 
                 <div class="textBox flex column justifyBetween">

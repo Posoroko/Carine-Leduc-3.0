@@ -20,7 +20,7 @@ const props = defineProps({
             </div>
 
             <div class="frame centered">
-                <img class="cardImage" :src="`${directusAssets}${imageId}`" :alt="imageAlt">
+                <img class="cardImage" :src="`${directusAssets}${imageId}?key=220px`" :alt="imageAlt">
             </div>
 
             <div class="textBox flex column justifyBetween">

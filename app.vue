@@ -5,7 +5,7 @@
 
         <NuxtPage />
 
-        <FooterMain />
+        <LazyFooterMain />
 
         <div class="mandalaBox right">
             <DecoQuarterMandala />
