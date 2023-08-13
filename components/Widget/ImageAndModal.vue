@@ -37,7 +37,7 @@ function closeModal() {
             <span class="close textColor" @click="closeModal">&times;</span>
 
             <img class="objectFitContain" :src="`${directusAssets}${imageId}?key=800px`"
-                :alt="imageAlt || 'Carine Leduc, thérapeute énergétitienne en Centre-Bretagne'">
+                :alt="imageAlt || 'Carine Leduc, thérapeute énergéticienne en Centre-Bretagne'">
         </div>
     </div>
 </template>

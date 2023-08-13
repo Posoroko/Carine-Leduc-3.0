@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             siteUrl: 'https://carine-leduc-3.netlify.app',
-            siteName: 'Carine Leduc, thérapeute énergétitienne en Centre-Bretagne.',
+            siteName: 'Carine Leduc, thérapeute énergéticienne en Centre-Bretagne.',
             siteDescription: 'Carine Leduc vous accompagne dans votre démarche de bien-être et de développement personnel avec des oins et massages énergétiques, des guidances, des ateliers de groupes et des formations.',
             language: 'fr-FR',
             titleSeparator: '|'

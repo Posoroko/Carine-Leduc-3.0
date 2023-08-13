@@ -51,7 +51,7 @@ const { data: services } = await useAsyncData(
                     <CardLevelOne  :title="service.name" 
                             :text="service.teaser"
                             :imageId="service.cardImage"
-                            :imageAlt="`${service.name} avec Carine Leduc, thérapeute énergétitienne.`"
+                            :imageAlt="`${service.name} avec Carine Leduc, thérapeute énergéticienne.`"
                             :url="`/prestations/${service.slug}`"/>
                 </li>
             </ul>
