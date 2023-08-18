@@ -13,7 +13,7 @@ const props = defineProps({
 
 <template>
     <div class="box relative">
-        <img :src="`${directusAssets}${imageId}`" alt="Carine Leduc, thérapeute énergéticienne en Centre-Bretagne.">
+        <img :src="`${directusAssets}${imageId}?key=header-1920-750`" alt="Carine Leduc, thérapeute énergéticienne en Centre-Bretagne.">
 
         <div class="absoluteFull flex column justifyEnd alignStart">
             <div class="flex column">
