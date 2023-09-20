@@ -62,13 +62,13 @@ const { data: services } = await useAsyncData(
 .cardsBox {
     width: min(100%, calc(var(--card-width) * 3.5));
     padding: 40px 20px;
-    border: 4px solid var(--brand-color-1);
-    outline: 2px solid var(--brand-color-1);
+    /* border: 4px solid var(--brand-color-1);
+    outline: 2px solid var(--brand-color-1); */
     outline-offset: -8px;
     margin: 50px auto;
     align-items: stretch;
     gap: 50px;
-    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.351);
+    /* box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.351); */
 }
 .card {
     width: min(95vw, var(--card-width));

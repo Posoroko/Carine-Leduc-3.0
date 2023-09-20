@@ -24,7 +24,7 @@ const props = defineProps({
 
 <template>
     <div class="box narrowWidth marTop50">
-        <div class="imageBox" v-if="imageId">
+        <div class="imageBox w100" v-if="imageId">
             <WidgetImageAndModal :imageId="imageId" :imageAlt="imageAlt" objectFit="contain" />
 
             <!-- <img class="paragraphImage" :src="`${directusAssets}${imageId}?key=300px`" :alt="imageAlt"> -->
@@ -32,7 +32,7 @@ const props = defineProps({
 
         <h2 class="title" v-if="title">{{ title }}</h2>
 
-        <p class="content bodyText2" v-if="text">
+        <p class="content bodyText2 w100" v-if="text">
             <span class="firstLetter">{{ text[0] }}</span>
             {{ text.slice(1, 10000) }}
         </p>
@@ -42,14 +42,13 @@ const props = defineProps({
 <style scoped>
 .imageBox {
     height: 300px;
-    width: 350px;
 }
 .title {
     font-family: var(--title-font);
     font-size: clamp(2rem, 2vw + 0.1rem, 3.2rem);
     font-weight: 700;
     color: var(--text-color);
-    margin-top: 45px;
+    margin-top: 75px;
 }
 .paragraphImage {
     width: 300px;
@@ -60,6 +59,7 @@ const props = defineProps({
     padding-bottom: 40px;
     border-bottom: 1px solid var(--brand-color-2);
     margin-top: 40px;
+    margin-bottom: 120px;
     text-align: justify;
     columns: 2;
     gap: 40px;

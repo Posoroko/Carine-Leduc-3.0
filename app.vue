@@ -1,9 +1,14 @@
+<script setup>
+const route = useRoute();
+</script>
 <template>
     <SeoKit />
     
     <div class="flex column justifyBetween " id="appBox">
 
         <NuxtPage />
+
+        <LazyWidgetNewsLetterForm />
 
         <LazyFooterMain />
 
@@ -14,6 +19,8 @@
         <div class="mandalaBox left">
             <DecoQuarterMandala />
         </div>
+
+        <WidgetContactButton v-if="route.fullPath != '/contact'" />
     </div>
     
 </template>

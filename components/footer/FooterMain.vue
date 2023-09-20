@@ -1,6 +1,6 @@
 <template>
     <footer class="flex alignCenter justifyCenter flex gap20 chicFont">
-        <div class="footerLinkBox flex justifyCenter gap20">
+        <div class="footerLinkBox flex justifyCenter gap20 wrap">
             <NuxtLink class="footerLink" to="/contact">                
                 <span>contact</span>    
             </NuxtLink>
@@ -24,7 +24,7 @@
 footer {
     
     background-color: var(--brand-color-1 );
-    padding: 100px 20px 50px 20px;
+    padding: 100px 20px 100px 20px;
     margin-top: 50px;
 }
 .footerLink{

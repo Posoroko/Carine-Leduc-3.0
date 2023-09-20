@@ -7,6 +7,7 @@
         </div> -->
 
         <div class="tabBar flex justifyCenter w100">
+            <NuxtLink class="tab pointer" to="/">Accueil</NuxtLink>
             <NuxtLink class="tab pointer" to="/prestations">Prestations</NuxtLink>
             <NuxtLink class="tab pointer" to="/a-propos">À propos</NuxtLink>
             <NuxtLink class="tab pointer" to="/agenda">Agenda</NuxtLink>

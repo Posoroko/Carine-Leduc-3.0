@@ -8,6 +8,8 @@ const props = defineProps({
     url: String,
     imageId: String,
     imageAlt: String,
+    price: String,
+    length: String
 })
 </script>
 
@@ -17,14 +19,20 @@ const props = defineProps({
             <DecoHalfMandala1 />
         </div>
 
-        <NuxtLink :to="url" class="card flex wrap pointer">
-            <div class="textBox flex column justifyBetween">
-                <h2 class="cardTitle">{{ title }}</h2>
+        <NuxtLink :to="url" class="card flex wrap pointer relative">
+            <div class="textBox flex column justifyBetween lightText">
+                <div class="inline spaceBetween gap50">
+                    <h2 class="cardTitle">{{ title }}</h2>
+
+                    <span class="bodyText1">{{ price }}€ - {{ length }}</span>
+                </div>
 
                 <p class="cardTeaser">{{ text }}</p>
 
                 <WidgetRightArrow class="marTop20" />
             </div>
+
+            
 
             <div class="cardFrame">
                 <img class="cardImage" :src="`${directusAssets}${imageId}`" :alt="imageAlt">
@@ -109,6 +117,7 @@ const props = defineProps({
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.559);
     transition: 300ms ease;
 }
+
 
 @media (max-width: 900px) {
     .cardFrame {

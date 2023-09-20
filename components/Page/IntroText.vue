@@ -23,14 +23,14 @@ const props = defineProps({
 
 <style scoped>
 .introText {
-    width: min(100%, 500px);
+    width: min(100%, 750px);
     margin: auto;
     font-family: var(--text-font);
     font-size: clamp(1.6rem, 2.5vw, 2.4rem);
     font-weight: 500;
     line-height: 1.5;
     white-space: pre-wrap;
-    
+    text-align: center;
 }
 .introText.large {
     padding: 150px 0;

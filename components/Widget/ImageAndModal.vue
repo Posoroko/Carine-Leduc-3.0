@@ -28,7 +28,7 @@ function closeModal() {
 </script>
 
 <template>
-    <div class="frame centered">
+    <div class="frame centered w100">
         <img class="smallImage" :src="`${directusAssets}${imageId}`" :alt="imageAlt" @click="handleImageclick">
     </div>
 

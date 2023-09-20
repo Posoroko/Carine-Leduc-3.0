@@ -620,6 +620,6 @@
 
 <style scoped>
 path {
-    fill: var(--brand-color-2);
+    fill: var(--brand-color-1);
 }
 </style>
