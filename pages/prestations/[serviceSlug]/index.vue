@@ -58,9 +58,13 @@ const { data: products } = await useAsyncData(
                                 :text="prod.teaser"
                                 :url="`/prestations/${route.params.serviceSlug}/${prod.slug}`"
                                 :imageId="prod.cardImage.id"
+<<<<<<< HEAD
                                 :imageAlt="`${prod.name}, par Carine Leduc, thérapeute énergétitienne.`"
                                 :price="prod.price"
                                 :length="prod.length"/>
+=======
+                                :imageAlt="`${prod.name}, par Carine Leduc, thérapeute énergéticienne.`"/>
+>>>>>>> e5d7f93b22c1aa189809349030a45013924b77f0
                         </li>
                     </ul>
                 </div>
