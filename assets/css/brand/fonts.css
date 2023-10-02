@@ -114,6 +114,7 @@ html {
     --body-title-font-family: var(--title-font);
 
     --body-title-size: clamp(2.6rem, 4vw + 0.1rem, 5.5rem);
+    --body-title-size-small: clamp(2rem, 3vw + 0.1rem, 4rem);
     --body-title-weight: 500;
     --body-title-line-height: 1;
 }
@@ -126,3 +127,10 @@ html {
     letter-spacing: 0.5px;
 }
 
+.bodySubtitle {
+    font-family: var(--body-title-font-family);
+    font-size: var(--body-title-size-small);
+    font-weight: var(--body-title-weight);
+    line-height: var(--body-title-line-height);
+    letter-spacing: 0.5px;
+}

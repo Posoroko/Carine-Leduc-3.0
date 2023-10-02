@@ -23,9 +23,8 @@ const { data: contact } = await useAsyncData(
     { server: true }
 )
 
-
-
 </script>
+
 <template>
     <PageMain>
         <template #headerImage>
@@ -36,6 +35,8 @@ const { data: contact } = await useAsyncData(
             <div class="narrowWidth lightText bodyTitle centered">
                 <NuxtLink class="formulaireLink BGC_Brand2_Hoverable pointer" to="/contact/formulaire-de-contact">formulaire de contact</NuxtLink>
             </div>
+
+            <WidgetSchedule v-if="contact" :schedule="contact.schedule" />
 
             <div class="narrowWidth marTop20">
                 <address class="contactBox flex column gap20 alignStart">
