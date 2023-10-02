@@ -113,8 +113,8 @@ export default defineNuxtConfig({
     routeRules: {
         // for all routes to be indexed by search engines
         '/*': { index: true },
-    },
-    // linkChecker: {
-    //     failOn404: true,
-    // }
+        // Homepage pre-rendered at build time
+        '/': { prerender: false },
+
+    }
 })
