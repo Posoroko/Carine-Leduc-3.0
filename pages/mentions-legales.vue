@@ -106,6 +106,7 @@ const { data: contact } = await useAsyncData(
 </template>
 
 <style scoped>
+
 * {
     color: var(--text-color);
 }

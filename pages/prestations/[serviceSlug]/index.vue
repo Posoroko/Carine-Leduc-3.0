@@ -12,6 +12,10 @@ const fetchOptions = {
         fields: 'type, type.name, *.*',
     }
 }
+
+
+
+
 const { data: service } = await useAsyncData(
     `service-${route.params.slug}`,
     async () => {
@@ -22,6 +26,11 @@ const { data: service } = await useAsyncData(
     ,
     { server: true }
 )
+
+const eric = "eric"
+const message = 'salut' + eric
+const message2 = `salut ${eric}}`
+
 
 const { data: products } = await useAsyncData(
     `products-${route.params.serviceSlug}`,
@@ -34,6 +43,8 @@ const { data: products } = await useAsyncData(
     ,
     { server: true }
 )
+
+
 </script>
 
 <template>
@@ -68,5 +79,7 @@ const { data: products } = await useAsyncData(
 </template>
 
 <style scoped>
+
+
 
 </style>
