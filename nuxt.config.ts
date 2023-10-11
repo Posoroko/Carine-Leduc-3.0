@@ -114,7 +114,7 @@ export default defineNuxtConfig({
         // for all routes to be indexed by search engines
         '/*': { index: true },
         // Homepage pre-rendered at build time
-        '/': { prerender: false },
+        // '/': { prerender: false },
 
     }
 })
