@@ -80,6 +80,4 @@ const { data: products } = await useAsyncData(
 
 <style scoped>
 
-
-
 </style>
