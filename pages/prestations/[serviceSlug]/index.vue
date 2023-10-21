@@ -27,10 +27,6 @@ const { data: service } = await useAsyncData(
     { server: true }
 )
 
-const eric = "eric"
-const message = 'salut' + eric
-const message2 = `salut ${eric}}`
-
 
 const { data: products } = await useAsyncData(
     `products-${route.params.serviceSlug}`,
@@ -69,7 +65,8 @@ const { data: products } = await useAsyncData(
                                 :text="prod.teaser"
                                 :url="`/prestations/${route.params.serviceSlug}/${prod.slug}`"
                                 :imageId="prod.cardImage.id"
-                                :imageAlt="`${prod.name}, par Carine Leduc, thérapeute énergéticienne.`"/>
+                                :imageAlt="`${prod.name}, par Carine Leduc, thérapeute énergéticienne.`"
+                                :price="prod.price" />
                         </li>
                     </ul>
                 </div>

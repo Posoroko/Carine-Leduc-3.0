@@ -20,7 +20,7 @@ const route = useRoute();
             <DecoQuarterMandala />
         </div>
 
-        <WidgetContactButton v-if="route.fullPath != '/contact'" />
+        <LazyWidgetContactButton v-if="route.fullPath != '/contact'" />
     </div>
     
 </template>

@@ -35,9 +35,9 @@ const { data: pageData } = await useAsyncData(
         
         
         <template #main>
-            <HomePagePrestations />
+            <LazyHomePagePrestations />
 
-            <HomePageAbout />
+            <LazyHomePageAbout />
         </template>
     </PageMain>
 </template>
