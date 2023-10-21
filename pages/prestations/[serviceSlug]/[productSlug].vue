@@ -32,9 +32,8 @@ const { data: product } = await useAsyncData(
 
             <PageTitle :text="product.name" />
 
-            <div class="narrowWidth">
-                <p>{{ product.price }}€</p>
-                <!-- <p>{{ product.length }}</p> -->
+            <div class="narrowWidth flex justifyCenter gap20 priceAndLength marTop20">
+                <p>{{ product.price }}€</p> - <p>{{ product.length }}</p>
             </div>
 
             <PageIntroText :text="product.teaser" />
@@ -62,6 +61,11 @@ const { data: product } = await useAsyncData(
 </template>
 
 <style scoped>
+
+.priceAndLength {
+    font-size: clamp(1.8rem, 3.5vw + 0.1rem, 2.8rem);
+    font-family: var(--body-text-family);
+}
 .goalsBox{
     background-color: var(--brand-color-1);
     padding: 40px;
