@@ -40,7 +40,7 @@ const { data: aboutItems } = await useAsyncData(
         <div class="about mainWidth flex column gap20 marTop50">
             <div class="cardBox ">
                 <NuxtLink class="card rightArrowHover relative titleCard" to="/a-propos">
-                    <img class="titleCardImage full objectFitCover" :src="`${directusAssets}${aboutPageData.headerImage}`" alt="">
+                    <img class="titleCardImage full objectFitCover" :src="`${directusAssets}${aboutPageData.headerImage}?key=500px`" alt="">
                     
                     <span class="aboutTextBox block absoluteFull flex column justifyBetween">
                         <h2 class="aboutTitle">{{ aboutPageData.title }}</h2>
@@ -53,7 +53,7 @@ const { data: aboutItems } = await useAsyncData(
  
                 <NuxtLink v-for="item in aboutItems" :key="item.id" :to="`a-propos/${item.slug}`" class="card rightArrowHover">
                     <div class="frame">
-                        <img class="cardImage" :src="`${directusAssets}${item.cardImage}`" alt="">
+                        <img class="cardImage" :src="`${directusAssets}${item.cardImage}?key=500px`" alt="">
                     </div>
 
                     <div class="textBox">
