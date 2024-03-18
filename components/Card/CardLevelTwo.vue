@@ -35,7 +35,7 @@ const props = defineProps({
             
 
             <div class="cardFrame">
-                <img class="cardImage" :src="`${directusAssets}${imageId}`" :alt="imageAlt">
+                <img class="cardImage" :src="`${directusAssets}${imageId}?key=500px`" :alt="imageAlt">
             </div>
         </NuxtLink>
     </div>
