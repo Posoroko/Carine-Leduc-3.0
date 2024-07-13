@@ -53,6 +53,7 @@ function closeModal() {
     border-radius: 10px;
     box-shadow: 1px 1px 10px #00000097;
     object-fit: v-bind(objectFit);
+    object-fit: contain;
     object-position: center;
     cursor: pointer;
     transition: 300ms ease;
