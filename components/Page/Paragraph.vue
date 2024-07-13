@@ -41,7 +41,7 @@ const props = defineProps({
 
 <style scoped>
 .imageBox {
-    height: 300px;
+    /*height: 300px;*/
 }
 .title {
     font-family: var(--title-font);
