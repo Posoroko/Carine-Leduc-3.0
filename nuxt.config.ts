@@ -34,7 +34,12 @@ export default defineNuxtConfig({
                 { rel: "shortcut icon", href: "/seo-files/favicon.ico" },
                 { rel: "manifest", href: "/seo-files/site.webmanifest" }
             ],
+            // < meta http-equiv="cache-control" content = "no-cache, no-store, must-revalidate" >
             meta: [
+                {
+                    name: 'http-equiv',
+                    content: 'no-cache, no-store, must-revalidate',
+                },
                 {
                     name: 'msapplication-TileColor',
                     content: '#da532c',
