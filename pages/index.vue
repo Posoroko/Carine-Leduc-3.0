@@ -18,7 +18,7 @@ const { data: pageData } = await useAsyncData(
         return items.data[0]
     }
     ,
-    { server: true }
+    { server: false }
 )
 
 </script>
